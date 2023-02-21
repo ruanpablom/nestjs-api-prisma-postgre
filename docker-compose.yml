@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: nestjs-api
+      POSTGRES_USER: pgsql
+      POSTGRES_PASSWORD: Passw@rd
+    expose:
+      - "5432"
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-volume:/var/lib/postgresql
+
+volumes:
+  db-volume: {}
